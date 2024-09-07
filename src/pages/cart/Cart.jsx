@@ -6,6 +6,8 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 const Cart = () => {
   const { products, total } = useSelector((state) => state.cart);
 
+  console.log(total)
+
   return (
     <div className="px-5 lg:px-[160px] py-5 lg:py-10 flex flex-col lg:flex-row gap-10">
       <div className="w-full lg:w-[70%]">
@@ -18,7 +20,7 @@ const Cart = () => {
         )}
 
         <div className="mt-5 lg:mt-8">
-          {products.map((item, index) => {
+          {products?.map((item, index) => {
             return <CartCard key={index} item={item} />;
           })}
         </div>

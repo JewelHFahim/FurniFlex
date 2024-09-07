@@ -9,6 +9,8 @@ import {
 import { useDispatch } from "react-redux";
 
 const CartCard = ({ item }) => {
+  console.log(item?.img)
+
   const dispatch = useDispatch();
 
   return (

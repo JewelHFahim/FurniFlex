@@ -11,7 +11,6 @@ export const UserContext = createContext();
 
 const AuthContext = ({children}) => {
     const [user, setUser] = useState();
-    const [products, setProducts] = useState();
     const [loading, setLoading] = useState(true);
 
     
@@ -48,13 +47,7 @@ const AuthContext = ({children}) => {
     },[])
 
 
-    useEffect(()=>{
-        fetch("../../public/products.json")
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
-
-    const authInfo = {user, products, loading, logOut, createUser, logIn, googleSignin}
+    const authInfo = {user, loading, logOut, createUser, logIn, googleSignin}
 
     return (
         <UserContext.Provider value ={authInfo} >

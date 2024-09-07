@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import ProductCard from "../../components/ProductCard";
-import { UserContext } from "../../context/AuthContext";
+import { useGetProductsQuery } from "../../redux/features/products/productApi";
 
 const Products = () => {
   const [active, setactive] = useState("");
   const [filter, setFilter] = useState("");
-  const { products } = useContext(UserContext);
+  const { data: products, isLoading } = useGetProductsQuery();
 
   const handleFilter = (value) => {
     setFilter(value);
@@ -27,8 +27,11 @@ const Products = () => {
     },
   ];
 
-  const filteredProducts = products?.filter((prod) => prod.cat === filter);
-  const result = filteredProducts?.length > 0 ? filteredProducts : products;
+  const filteredProducts = products?.data?.filter(
+    (prod) => prod.cat === filter
+  );
+  const result =
+    filteredProducts?.length > 0 ? filteredProducts : products?.data;
 
   return (
     <div className="px-5 lg:px-[160px] py-5 lg:py-10">
@@ -57,9 +60,16 @@ const Products = () => {
         {/* Products List */}
         <div className="w-full lg:w-[80%] mx-auto flex flex-wrap gap-8 justify-center lg:justify-between lg:px-4">
           {/* Card */}
-          {result?.map((product, index) => {
-            return <ProductCard key={index} product={product} />;
-          })}
+          {isLoading
+            ? [...Array(6)].map((_, idx) => (
+                <div
+                  key={idx}
+                  className="w-[250px] h-[400px] bg-slate-400 rounded-lg animate-pulse"
+                />
+              ))
+            : result?.map((product, index) => {
+                return <ProductCard key={index} product={product} />;
+              })}
         </div>
       </div>
     </div>

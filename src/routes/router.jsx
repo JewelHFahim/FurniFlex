@@ -11,6 +11,7 @@ import Cart from "../pages/cart/Cart";
 import Checkout from "../pages/cart/Checkout";
 import Success from "../pages/success/Success";
 import PrivateRoute from "./PrivateRoute";
+import SingleProduct from "../pages/products/SingleProduct";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "/product/:id",
+        element: <SingleProduct />,
       },
       {
         path: "/categories",

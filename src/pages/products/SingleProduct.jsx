@@ -19,7 +19,7 @@ const SingleProduct = () => {
     <div className="my-4 lg:my-16 px-5 md:px-[160px] flex flex-col lg:flex-row gap-16">
       {/* Images */}
       <div className="w-full lg:w-1/2 lg:sticky top-20 h-max">
-        <img src={product?.data?.img} alt="" className="h-[500px] w-[50vw]" />
+        <img src={product?.data?.img} alt="" className=" md:h-[500px] md:w-[50vw]" />
       </div>
 
       {/* Texts */}

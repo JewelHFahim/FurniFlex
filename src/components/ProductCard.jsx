@@ -14,9 +14,9 @@ const ProductCard = ({ product }) => {
     <div className="border-[#F1F1F1] border rounded-[16px] w-[277px] p-4 flex flex-col justify-between gap-6">
       <Link
         to={`/product/${product?._id}`}
-        className="bg-[#F2F2F2] rounded-[8px]"
+        className="bg-[#F2F2F2] rounded-t-[8px]"
       >
-        <img src={product.img} alt="" className="w-[205px] h-[205px]" />
+        <img src={product.img} alt="" className="w-full h-full object-contain rounded-t-[8px]" />
       </Link>
 
       <div className="flex flex-col gap-3">

@@ -1,8 +1,12 @@
-# React + Vite
+This is a E-Commerce Project.
+Features:
+--Home page with slide and new product list
+--Signin, SignUp page using firebase- (email, password and google)
+--Product displaye page where product can filter by category and can add to cart
+--Product details page, pssoble add to cart
+--Cart page product summary and total price display here
+--Checkout page, its a private route have to login for continue process
+--All pages mobile responsive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Used Technologies:
+-- React, Tailwind, Redux, Firebase, Swiper, React-router-dom, React-modern-drawer, React-icons, React-hot-toast, React-hook-form, React-confetti

@@ -7,6 +7,7 @@ Features:
 --Cart page product summary and total price display here
 --Checkout page, its a private route have to login for continue process
 --All pages mobile responsive
+--For state management use context and redux/redux-tool-kit
 
 Used Technologies:
 -- React, Tailwind, Redux, Firebase, Swiper, React-router-dom, React-modern-drawer, React-icons, React-hot-toast, React-hook-form, React-confetti

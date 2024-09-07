@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
-  console.log(product);
-
   return (
     <div className="border-[#F1F1F1] border rounded-[16px] w-[277px] p-4 flex flex-col justify-between gap-6">
       <Link

@@ -9,7 +9,6 @@ import {
 import { useDispatch } from "react-redux";
 
 const CartCard = ({ item }) => {
-  console.log(item?.img)
 
   const dispatch = useDispatch();
 
@@ -50,9 +49,24 @@ const CartCard = ({ item }) => {
               </h3>
 
               <div className="flex md:hidden items-center gap-3 border rounded-md w-max px-3 text-lg font-semibold">
-                <button className="text-[#7e7d7d]">-</button>
+                <button
+                  className="text-[#7e7d7d]"
+                  onClick={() => (
+                    toast.success("Remove From Cart"),
+                    dispatch(removeSingle(item))
+                  )}
+                >
+                  -
+                </button>
                 <p className="text-base">{item?.quantity}</p>
-                <button className="text-[#7e7d7d]">+</button>
+                <button
+                  className="text-[#7e7d7d]"
+                  onClick={() => (
+                    toast.success("Added To Cart"), dispatch(addToCart(item))
+                  )}
+                >
+                  +
+                </button>
               </div>
 
               <p className=" md:hidden md:text-[20px] font-semibold text-[#0E0E0E]">

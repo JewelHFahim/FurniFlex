@@ -14,7 +14,6 @@ const Navbar = () => {
   const { products } = useSelector((state) => state.cart);
   const { user, logOut } = useContext(UserContext);
 
-  console.log(products);
   const handleProfile = () => {
     setProfileOpen(!profileOpen);
   };
